@@ -14,5 +14,5 @@ RUN apt-get update -y && \
     git \
     libssl-dev \
     net-tools 
-git clone --recurse-submodules https://github.com/lgsvl/apollo-5.0.git
-WORKDIR /home/apollo_ros_bridge
+RUN git clone --recurse-submodules https://github.com/lgsvl/apollo-5.0.git
+WORKDIR /home
