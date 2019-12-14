@@ -1,5 +1,4 @@
-RUN  sed -i s@/archive.ubuntu.com/@/mirrors.aliyun.com/@g /etc/apt/sources.list
-RUN  apt-get clean
+FROM nvidia/cuda:8.0-cudnn7-devel-ubuntu14.04
 RUN apt-get update -y && \
     apt-get install -y \
     wget \
