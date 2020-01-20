@@ -1,4 +1,6 @@
 FROM osrf/ros:melodic-desktop-full-bionic
+RUN echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
+RUN source ~/.bashrc
 RUN sed -i 's/archive.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list
 RUN apt-get update
 RUN apt-get install git -y
