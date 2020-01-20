@@ -9,6 +9,7 @@ RUN mkdir /temp && \
     git clone https://github.com/ethz-adrl/control-toolbox /temp
 RUN cd /temp/control-toolbox/ct
 RUN bash install_deps.sh
+
 RUN sed -i 's/archive.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list
 WORKDIR /home
 
