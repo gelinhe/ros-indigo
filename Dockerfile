@@ -10,7 +10,7 @@ RUN git clone https://github.com/ethz-adrl/control-toolbox
 RUN git clone https://github.com/ANYbotics/kindr.git
 WORKDIR /temp/kindr
 RUN mkdir build
-RUN cd build
+WORKDIR /temp/kindr/build
 RUN cmake ..
 RUN make install
 WORKDIR /temp/control-toolbox/ct
