@@ -1,12 +1,8 @@
 FROM osrf/ros:melodic-desktop-full-bionic
+RUN sed -i 's/archive.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list
 RUN apt-get update
 RUN apt-get install git -y
 RUN apt-get install sudo -y
 RUN apt-get install wget -y
 RUN apt-get install gedit -y
-RUN mkdir /temp && \ 
-    cd /temp && \
-    git clone https://github.com/ethz-adrl/control-toolbox /temp
-RUN bash /temp/control-toolbox/ct/install_deps.sh
-RUN sed -i 's/archive.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list
 WORKDIR /home
