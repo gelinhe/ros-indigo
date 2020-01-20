@@ -5,4 +5,10 @@ RUN apt-get install git -y
 RUN apt-get install sudo -y
 RUN apt-get install wget -y
 RUN apt-get install gedit -y
+WORKDIR /temp
+RUN git clone https://github.com/ethz-adrl/control-toolbox
+WORKDIR /temp/control-toolbox/ct
+RUN bash install_deps.sh
+RUN bash install_hpipm.sh
 WORKDIR /home
+
