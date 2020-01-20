@@ -1,6 +1,5 @@
 FROM osrf/ros:melodic-desktop-full-bionic
 RUN echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
-RUN source ~/.bashrc
 RUN sed -i 's/archive.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list
 RUN apt-get update
 RUN apt-get install git -y
@@ -19,5 +18,6 @@ WORKDIR /temp/control-toolbox/ct
 RUN bash install_deps.sh
 RUN bash install_hpipm.sh
 RUN bash build_ct.sh -DCMAKE_BUILD_TYPE=Release
+RUN echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
 WORKDIR /home
 
